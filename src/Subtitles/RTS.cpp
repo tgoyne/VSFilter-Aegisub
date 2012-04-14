@@ -3013,9 +3013,7 @@ bool CRenderedTextSubtitle::ParseHtmlTag(CSubtitle* sub, CStringW str, STSStyle&
 				if (nColor >= 0 && nColor < 4) {
 					CString key = WToT(params[i]).TrimLeft('#');
 					DWORD val;
-					if (g_colors.Lookup(key, val)) {
-						style.colors[nColor] = val;
-					} else if ((style.colors[nColor] = _tcstol(key, NULL, 16)) == 0) {
+					if ((style.colors[nColor] = _tcstol(key, NULL, 16)) == 0) {
 						style.colors[nColor] = 0x00ffffff;    // default is white
 					}
 					style.colors[nColor] = ((style.colors[nColor]>>16)&0xff)|((style.colors[nColor]&0xff)<<16)|(style.colors[nColor]&0x00ff00);

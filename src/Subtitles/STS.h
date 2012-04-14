@@ -26,7 +26,6 @@
 #include <atlcoll.h>
 #include <BaseClasses/wxutil.h>
 #include "TextFile.h"
-#include "GFN.h"
 
 typedef enum {TIME, FRAME} tmode; // the meaning of STSEntry::start/end
 
