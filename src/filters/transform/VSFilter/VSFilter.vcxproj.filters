@@ -57,9 +57,6 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Manifest Include="res\VSFilter.manifest" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="VSFilter.def">
       <Filter>Resource Files</Filter>
     </None>

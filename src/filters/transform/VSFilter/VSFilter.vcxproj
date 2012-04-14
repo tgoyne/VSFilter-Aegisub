@@ -100,12 +100,6 @@
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release Dynamic|Win32'">$(SolutionDir)bin\Filters_x86_Dynamic\</OutDir>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release Filter|x64'">$(SolutionDir)bin\Filters_x64\</OutDir>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release Dynamic|x64'">$(SolutionDir)bin\Filters_x64_Dynamic\</OutDir>
-    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug Filter|Win32'">false</GenerateManifest>
-    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release Filter|Win32'">false</GenerateManifest>
-    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release Dynamic|Win32'">false</GenerateManifest>
-    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug Filter|x64'">false</GenerateManifest>
-    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release Filter|x64'">false</GenerateManifest>
-    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release Dynamic|x64'">false</GenerateManifest>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Filter|Win32'">
     <ClCompile>
@@ -264,9 +258,6 @@
     <ProjectReference Include="..\..\..\thirdparty\BaseClasses\BaseClasses.vcxproj">
       <Project>{e8a3f6fa-ae1c-4c8e-a0b6-9c8480324eaa}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Manifest Include="res\VSFilter.manifest" />
   </ItemGroup>
   <ItemGroup>
     <None Include="VSFilter.def" />
