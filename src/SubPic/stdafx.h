@@ -36,5 +36,4 @@
 #include <afxwin.h>			// MFC core and standard components
 
 #include <BaseClasses/streams.h>
-#include <dvdmedia.h>
 #include "../DSUtil/DSUtil.h"

@@ -14,19 +14,10 @@
     <ClCompile Include="CoordGeom.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DX7SubPic.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DX9SubPic.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MemSubPic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SubPicAllocatorPresenterImpl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SubPicImpl.cpp">
@@ -43,12 +34,6 @@
     <ClInclude Include="CoordGeom.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DX7SubPic.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="DX9SubPic.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ISubPic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -59,9 +44,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SubPicAllocatorPresenterImpl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SubPicImpl.h">

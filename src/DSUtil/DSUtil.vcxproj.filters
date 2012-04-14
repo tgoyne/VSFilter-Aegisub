@@ -11,9 +11,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="deinterlace.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="DSMPropertyBag.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -23,25 +20,7 @@
     <ClCompile Include="FontInstaller.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GolombBuffer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="H264Nalu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="HdmvClipInfo.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MediaTypeEx.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MediaTypes.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="mmintrin64.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="NullRenderers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
@@ -56,9 +35,6 @@
     <ClCompile Include="vd_asm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AudioParser.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DSMPropertyBag.h">
@@ -68,27 +44,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FontInstaller.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GolombBuffer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="H264Nalu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HdmvClipInfo.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MediaTypeEx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MediaTypes.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Mpeg2Def.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="NullRenderers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SharedInclude.h">
@@ -107,9 +62,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="vd_asm.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AudioParser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

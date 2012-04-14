@@ -224,7 +224,7 @@ public:
 };
 
 class __declspec(uuid("537DCACA-2812-4a4f-B2C6-1A34C17ADEB0"))
-	CRenderedTextSubtitle : public CSimpleTextSubtitle, public CSubPicProviderImpl, public ISubStream
+	CRenderedTextSubtitle : public CSimpleTextSubtitle, public CSubPicProviderImpl
 {
 	CAtlMap<int, CSubtitle*> m_subtitleCache;
 
@@ -285,14 +285,4 @@ public:
 	STDMETHODIMP_(REFERENCE_TIME) GetStop(POSITION pos, double fps);
 	STDMETHODIMP_(bool) IsAnimated(POSITION pos);
 	STDMETHODIMP Render(SubPicDesc& spd, REFERENCE_TIME rt, double fps, RECT& bbox);
-
-	// IPersist
-	STDMETHODIMP GetClassID(CLSID* pClassID);
-
-	// ISubStream
-	STDMETHODIMP_(int) GetStreamCount();
-	STDMETHODIMP GetStreamInfo(int i, WCHAR** ppName, LCID* pLCID);
-	STDMETHODIMP_(int) GetStream();
-	STDMETHODIMP SetStream(int iStream);
-	STDMETHODIMP Reload();
 };
