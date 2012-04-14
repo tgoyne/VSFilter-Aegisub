@@ -262,9 +262,7 @@ protected:
 	virtual void OnChanged() {}
 
 public:
-	CString m_name;
 	LCID m_lcid;
-	exttype m_exttype;
 	tmode m_mode;
 	CTextFile::enc m_encoding;
 	CString m_path;
@@ -312,7 +310,6 @@ public:
 	bool Open(CString fn, int CharSet, CString name = _T(""));
 	bool Open(CTextFile* f, int CharSet, CString name);
 	bool Open(BYTE* data, int len, int CharSet, CString name);
-	bool SaveAs(CString fn, exttype et, double fps = -1, CTextFile::enc = CTextFile::ASCII);
 
 #ifdef _VSMOD // load embedded images
 	bool LoadUUEFile(CTextFile* file, CString m_fn);
