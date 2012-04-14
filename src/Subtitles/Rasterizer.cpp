@@ -31,6 +31,9 @@
 #include "Rasterizer.h"
 #include "SeparableFilter.h"
 
+#include <xmmintrin.h>
+#include <emmintrin.h>
+
 #ifndef _MAX		/* avoid collision with common (nonconforming) macros */
 #define _MAX	(max)
 #define _MIN	(min)

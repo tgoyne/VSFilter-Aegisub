@@ -18,6 +18,8 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug Filter|Win32 = Debug Filter|Win32
 		Debug Filter|x64 = Debug Filter|x64
+		Release Dynamic|Win32 = Release Dynamic|Win32
+		Release Dynamic|x64 = Release Dynamic|x64
 		Release Filter|Win32 = Release Filter|Win32
 		Release Filter|x64 = Release Filter|x64
 	EndGlobalSection
@@ -26,6 +28,10 @@ Global
 		{E8A3F6FA-AE1C-4C8E-A0B6-9C8480324EAA}.Debug Filter|Win32.Build.0 = Debug|Win32
 		{E8A3F6FA-AE1C-4C8E-A0B6-9C8480324EAA}.Debug Filter|x64.ActiveCfg = Debug|x64
 		{E8A3F6FA-AE1C-4C8E-A0B6-9C8480324EAA}.Debug Filter|x64.Build.0 = Debug|x64
+		{E8A3F6FA-AE1C-4C8E-A0B6-9C8480324EAA}.Release Dynamic|Win32.ActiveCfg = Release Dynamic|Win32
+		{E8A3F6FA-AE1C-4C8E-A0B6-9C8480324EAA}.Release Dynamic|Win32.Build.0 = Release Dynamic|Win32
+		{E8A3F6FA-AE1C-4C8E-A0B6-9C8480324EAA}.Release Dynamic|x64.ActiveCfg = Release Dynamic|x64
+		{E8A3F6FA-AE1C-4C8E-A0B6-9C8480324EAA}.Release Dynamic|x64.Build.0 = Release Dynamic|x64
 		{E8A3F6FA-AE1C-4C8E-A0B6-9C8480324EAA}.Release Filter|Win32.ActiveCfg = Release|Win32
 		{E8A3F6FA-AE1C-4C8E-A0B6-9C8480324EAA}.Release Filter|Win32.Build.0 = Release|Win32
 		{E8A3F6FA-AE1C-4C8E-A0B6-9C8480324EAA}.Release Filter|x64.ActiveCfg = Release|x64
@@ -34,6 +40,10 @@ Global
 		{FC70988B-1AE5-4381-866D-4F405E28AC42}.Debug Filter|Win32.Build.0 = Debug|Win32
 		{FC70988B-1AE5-4381-866D-4F405E28AC42}.Debug Filter|x64.ActiveCfg = Debug|x64
 		{FC70988B-1AE5-4381-866D-4F405E28AC42}.Debug Filter|x64.Build.0 = Debug|x64
+		{FC70988B-1AE5-4381-866D-4F405E28AC42}.Release Dynamic|Win32.ActiveCfg = Release Dynamic|Win32
+		{FC70988B-1AE5-4381-866D-4F405E28AC42}.Release Dynamic|Win32.Build.0 = Release Dynamic|Win32
+		{FC70988B-1AE5-4381-866D-4F405E28AC42}.Release Dynamic|x64.ActiveCfg = Release Dynamic|x64
+		{FC70988B-1AE5-4381-866D-4F405E28AC42}.Release Dynamic|x64.Build.0 = Release Dynamic|x64
 		{FC70988B-1AE5-4381-866D-4F405E28AC42}.Release Filter|Win32.ActiveCfg = Release|Win32
 		{FC70988B-1AE5-4381-866D-4F405E28AC42}.Release Filter|Win32.Build.0 = Release|Win32
 		{FC70988B-1AE5-4381-866D-4F405E28AC42}.Release Filter|x64.ActiveCfg = Release|x64
@@ -42,6 +52,10 @@ Global
 		{D514EA4D-EAFB-47A9-A437-A582CA571251}.Debug Filter|Win32.Build.0 = Debug|Win32
 		{D514EA4D-EAFB-47A9-A437-A582CA571251}.Debug Filter|x64.ActiveCfg = Debug|x64
 		{D514EA4D-EAFB-47A9-A437-A582CA571251}.Debug Filter|x64.Build.0 = Debug|x64
+		{D514EA4D-EAFB-47A9-A437-A582CA571251}.Release Dynamic|Win32.ActiveCfg = Release Dynamic|Win32
+		{D514EA4D-EAFB-47A9-A437-A582CA571251}.Release Dynamic|Win32.Build.0 = Release Dynamic|Win32
+		{D514EA4D-EAFB-47A9-A437-A582CA571251}.Release Dynamic|x64.ActiveCfg = Release Dynamic|x64
+		{D514EA4D-EAFB-47A9-A437-A582CA571251}.Release Dynamic|x64.Build.0 = Release Dynamic|x64
 		{D514EA4D-EAFB-47A9-A437-A582CA571251}.Release Filter|Win32.ActiveCfg = Release|Win32
 		{D514EA4D-EAFB-47A9-A437-A582CA571251}.Release Filter|Win32.Build.0 = Release|Win32
 		{D514EA4D-EAFB-47A9-A437-A582CA571251}.Release Filter|x64.ActiveCfg = Release|x64
@@ -50,6 +64,10 @@ Global
 		{5E56335F-0FB1-4EEA-B240-D8DC5E0608E4}.Debug Filter|Win32.Build.0 = Debug|Win32
 		{5E56335F-0FB1-4EEA-B240-D8DC5E0608E4}.Debug Filter|x64.ActiveCfg = Debug|x64
 		{5E56335F-0FB1-4EEA-B240-D8DC5E0608E4}.Debug Filter|x64.Build.0 = Debug|x64
+		{5E56335F-0FB1-4EEA-B240-D8DC5E0608E4}.Release Dynamic|Win32.ActiveCfg = Release Dynamic|Win32
+		{5E56335F-0FB1-4EEA-B240-D8DC5E0608E4}.Release Dynamic|Win32.Build.0 = Release Dynamic|Win32
+		{5E56335F-0FB1-4EEA-B240-D8DC5E0608E4}.Release Dynamic|x64.ActiveCfg = Release Dynamic|x64
+		{5E56335F-0FB1-4EEA-B240-D8DC5E0608E4}.Release Dynamic|x64.Build.0 = Release Dynamic|x64
 		{5E56335F-0FB1-4EEA-B240-D8DC5E0608E4}.Release Filter|Win32.ActiveCfg = Release|Win32
 		{5E56335F-0FB1-4EEA-B240-D8DC5E0608E4}.Release Filter|Win32.Build.0 = Release|Win32
 		{5E56335F-0FB1-4EEA-B240-D8DC5E0608E4}.Release Filter|x64.ActiveCfg = Release|x64
@@ -58,6 +76,10 @@ Global
 		{C2082189-3ECB-4079-91FA-89D3C8A305C0}.Debug Filter|Win32.Build.0 = Debug|Win32
 		{C2082189-3ECB-4079-91FA-89D3C8A305C0}.Debug Filter|x64.ActiveCfg = Debug|x64
 		{C2082189-3ECB-4079-91FA-89D3C8A305C0}.Debug Filter|x64.Build.0 = Debug|x64
+		{C2082189-3ECB-4079-91FA-89D3C8A305C0}.Release Dynamic|Win32.ActiveCfg = Release Dynamic|Win32
+		{C2082189-3ECB-4079-91FA-89D3C8A305C0}.Release Dynamic|Win32.Build.0 = Release Dynamic|Win32
+		{C2082189-3ECB-4079-91FA-89D3C8A305C0}.Release Dynamic|x64.ActiveCfg = Release Dynamic|x64
+		{C2082189-3ECB-4079-91FA-89D3C8A305C0}.Release Dynamic|x64.Build.0 = Release Dynamic|x64
 		{C2082189-3ECB-4079-91FA-89D3C8A305C0}.Release Filter|Win32.ActiveCfg = Release|Win32
 		{C2082189-3ECB-4079-91FA-89D3C8A305C0}.Release Filter|Win32.Build.0 = Release|Win32
 		{C2082189-3ECB-4079-91FA-89D3C8A305C0}.Release Filter|x64.ActiveCfg = Release|x64
@@ -66,6 +88,10 @@ Global
 		{F671100C-469F-4723-AAC4-B7FE4F5B8DC4}.Debug Filter|Win32.Build.0 = Debug Filter|Win32
 		{F671100C-469F-4723-AAC4-B7FE4F5B8DC4}.Debug Filter|x64.ActiveCfg = Debug Filter|x64
 		{F671100C-469F-4723-AAC4-B7FE4F5B8DC4}.Debug Filter|x64.Build.0 = Debug Filter|x64
+		{F671100C-469F-4723-AAC4-B7FE4F5B8DC4}.Release Dynamic|Win32.ActiveCfg = Release Dynamic|Win32
+		{F671100C-469F-4723-AAC4-B7FE4F5B8DC4}.Release Dynamic|Win32.Build.0 = Release Dynamic|Win32
+		{F671100C-469F-4723-AAC4-B7FE4F5B8DC4}.Release Dynamic|x64.ActiveCfg = Release Dynamic|x64
+		{F671100C-469F-4723-AAC4-B7FE4F5B8DC4}.Release Dynamic|x64.Build.0 = Release Dynamic|x64
 		{F671100C-469F-4723-AAC4-B7FE4F5B8DC4}.Release Filter|Win32.ActiveCfg = Release Filter|Win32
 		{F671100C-469F-4723-AAC4-B7FE4F5B8DC4}.Release Filter|Win32.Build.0 = Release Filter|Win32
 		{F671100C-469F-4723-AAC4-B7FE4F5B8DC4}.Release Filter|x64.ActiveCfg = Release Filter|x64
@@ -75,10 +101,10 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{E8A3F6FA-AE1C-4C8E-A0B6-9C8480324EAA} = {8CC3BC0F-7210-4FE3-B38D-118B94E8651D}
 		{FC70988B-1AE5-4381-866D-4F405E28AC42} = {8CC3BC0F-7210-4FE3-B38D-118B94E8651D}
 		{D514EA4D-EAFB-47A9-A437-A582CA571251} = {8CC3BC0F-7210-4FE3-B38D-118B94E8651D}
 		{5E56335F-0FB1-4EEA-B240-D8DC5E0608E4} = {8CC3BC0F-7210-4FE3-B38D-118B94E8651D}
 		{C2082189-3ECB-4079-91FA-89D3C8A305C0} = {8CC3BC0F-7210-4FE3-B38D-118B94E8651D}
+		{E8A3F6FA-AE1C-4C8E-A0B6-9C8480324EAA} = {8CC3BC0F-7210-4FE3-B38D-118B94E8651D}
 	EndGlobalSection
 EndGlobal
