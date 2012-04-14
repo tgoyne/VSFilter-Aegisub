@@ -20,77 +20,62 @@
  */
 
 #include "stdafx.h"
+
 #include <afxdlgs.h>
 #include <atlpath.h>
 #include "resource.h"
-#include "../../../Subtitles/VobSubFile.h"
+
 #include "../../../Subtitles/RTS.h"
 #include "../../../SubPic/MemSubPic.h"
 
 #define CSRIAPI extern "C" __declspec(dllexport)
 #define CSRI_OWN_HANDLES
 typedef const char *csri_rend;
-extern "C" struct csri_vsfilter_inst {
-	CRenderedTextSubtitle *rts;
-	CCritSec *cs;
+
+struct csri_vsfilter_inst {
+	CCritSec cs;
+	CRenderedTextSubtitle rts;
 	CSize script_res;
 	CSize screen_res;
 	CRect video_rect;
 	enum csri_pixfmt pixfmt;
-	size_t readorder;
+
+	csri_vsfilter_inst()
+	: rts(&cs)
+	{
+	}
 };
 
-typedef struct csri_vsfilter_inst csri_inst;
+typedef csri_vsfilter_inst csri_inst;
 #include "csri.h"
 
-#ifdef _VSMOD
-static csri_rend csri_vsfilter = "vsfiltermod";
-#else
-static csri_rend csri_vsfilter = "vsfilter";
-#endif
+static csri_rend csri_vsfilter = "vsfilter_aegisub";
 
 CSRIAPI csri_inst *csri_open_file(csri_rend *renderer, const char *filename, struct csri_openflag *flags)
 {
-	int namesize;
-	wchar_t *namebuf;
+	int namesize = MultiByteToWideChar(CP_UTF8, 0, filename, -1, NULL, 0);
+	if (!namesize) return 0;
 
-	namesize = MultiByteToWideChar(CP_UTF8, 0, filename, -1, NULL, 0);
-	if (!namesize) {
-		return 0;
-	}
-	namesize++;
-	namebuf = new wchar_t[namesize];
+	wchar_t *namebuf = new wchar_t[++namesize];
 	MultiByteToWideChar(CP_UTF8, 0, filename, -1, namebuf, namesize);
 
-	csri_inst *inst = new csri_inst();
-	inst->cs = new CCritSec();
-	inst->rts = new CRenderedTextSubtitle(inst->cs);
-	if (inst->rts->Open(CString(namebuf), DEFAULT_CHARSET)) {
-		delete[] namebuf;
-		inst->readorder = 0;
-		return inst;
-	} else {
-		delete[] namebuf;
-		delete inst->rts;
-		delete inst->cs;
+	csri_inst *inst = new csri_inst;
+	if (!inst->rts.Open(CString(namebuf), DEFAULT_CHARSET)) {
 		delete inst;
-		return 0;
+		inst = 0;
 	}
+	delete namebuf;
+	return inst;
 }
 
 CSRIAPI csri_inst *csri_open_mem(csri_rend *renderer, const void *data, size_t length, struct csri_openflag *flags)
 {
-	// This is actually less effecient than opening a file, since this first writes the memory data to a temp file,
+	// This is actually less efficient than opening a file, since this first writes the memory data to a temp file,
 	// then opens that file and parses from that.
-	csri_inst *inst = new csri_inst();
-	inst->cs = new CCritSec();
-	inst->rts = new CRenderedTextSubtitle(inst->cs);
-	if (inst->rts->Open((BYTE*)data, (int)length, DEFAULT_CHARSET, _T("CSRI memory subtitles"))) {
-		inst->readorder = 0;
+	csri_inst *inst = new csri_inst;
+	if (inst->rts.Open((BYTE*)data, (int)length, DEFAULT_CHARSET, L"")) {
 		return inst;
 	} else {
-		delete inst->rts;
-		delete inst->cs;
 		delete inst;
 		return 0;
 	}
@@ -98,22 +83,12 @@ CSRIAPI csri_inst *csri_open_mem(csri_rend *renderer, const void *data, size_t l
 
 CSRIAPI void csri_close(csri_inst *inst)
 {
-	if (!inst) {
-		return;
-	}
-
-	delete inst->rts;
-	delete inst->cs;
 	delete inst;
 }
 
 CSRIAPI int csri_request_fmt(csri_inst *inst, const struct csri_fmt *fmt)
 {
-	if (!inst) {
-		return -1;
-	}
-
-	if (!fmt->width || !fmt->height) {
+	if (!inst || !fmt->width || !fmt->height) {
 		return -1;
 	}
 
@@ -178,7 +153,7 @@ CSRIAPI void csri_render(csri_inst *inst, struct csri_frame *frame, double time)
 	}
 	spd.vidrect = inst->video_rect;
 
-	inst->rts->Render(spd, (REFERENCE_TIME)(time*10000000), arbitrary_framerate, inst->video_rect);
+	inst->rts.Render(spd, (REFERENCE_TIME)(time*10000000), arbitrary_framerate, inst->video_rect);
 }
 
 // No extensions supported
