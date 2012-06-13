@@ -1164,8 +1164,6 @@ CDisp::CDisp(IPin *pPin)
     if (!m_pString) {
 	return;
     }
-
-    (void)StringCchPrintf(m_pString, lstrlen(str) + 64, TEXT("%hs(%s)"), GuidNames[clsid], str);
 }
 
 /*  Display filter or pin */
@@ -1237,78 +1235,6 @@ CDisp::CDisp(double d)
 void WINAPI DisplayType(LPCTSTR label, const AM_MEDIA_TYPE *pmtIn)
 {
 
-    /* Dump the GUID types and a short description */
-
-    DbgLog((LOG_TRACE,5,TEXT("")));
-    DbgLog((LOG_TRACE,2,TEXT("%s  M type %hs  S type %hs"), label,
-	    GuidNames[pmtIn->majortype],
-	    GuidNames[pmtIn->subtype]));
-    DbgLog((LOG_TRACE,5,TEXT("Subtype description %s"),GetSubtypeName(&pmtIn->subtype)));
-
-    /* Dump the generic media types */
-
-    if (pmtIn->bTemporalCompression) {
-        DbgLog((LOG_TRACE,5,TEXT("Temporally compressed")));
-    } else {
-        DbgLog((LOG_TRACE,5,TEXT("Not temporally compressed")));
-    }
-
-    if (pmtIn->bFixedSizeSamples) {
-        DbgLog((LOG_TRACE,5,TEXT("Sample size %d"),pmtIn->lSampleSize));
-    } else {
-        DbgLog((LOG_TRACE,5,TEXT("Variable size samples")));
-    }
-
-    if (pmtIn->formattype == FORMAT_VideoInfo) {
-
-        VIDEOINFOHEADER *pVideoInfo = (VIDEOINFOHEADER *)pmtIn->pbFormat;
-
-        DisplayRECT(TEXT("Source rectangle"),pVideoInfo->rcSource);
-        DisplayRECT(TEXT("Target rectangle"),pVideoInfo->rcTarget);
-        DisplayBITMAPINFO(HEADER(pmtIn->pbFormat));
-
-    } if (pmtIn->formattype == FORMAT_VideoInfo2) {
-
-        VIDEOINFOHEADER2 *pVideoInfo2 = (VIDEOINFOHEADER2 *)pmtIn->pbFormat;
-
-        DisplayRECT(TEXT("Source rectangle"),pVideoInfo2->rcSource);
-        DisplayRECT(TEXT("Target rectangle"),pVideoInfo2->rcTarget);
-        DbgLog((LOG_TRACE, 5, TEXT("Aspect Ratio: %d:%d"),
-            pVideoInfo2->dwPictAspectRatioX,
-            pVideoInfo2->dwPictAspectRatioY));
-        DisplayBITMAPINFO(&pVideoInfo2->bmiHeader);
-
-    } else if (pmtIn->majortype == MEDIATYPE_Audio) {
-        DbgLog((LOG_TRACE,2,TEXT("     Format type %hs"),
-            GuidNames[pmtIn->formattype]));
-        DbgLog((LOG_TRACE,2,TEXT("     Subtype %hs"),
-            GuidNames[pmtIn->subtype]));
-
-        if ((pmtIn->subtype != MEDIASUBTYPE_MPEG1Packet)
-          && (pmtIn->cbFormat >= sizeof(PCMWAVEFORMAT)))
-        {
-            /* Dump the contents of the WAVEFORMATEX type-specific format structure */
-
-            WAVEFORMATEX *pwfx = (WAVEFORMATEX *) pmtIn->pbFormat;
-            DbgLog((LOG_TRACE,2,TEXT("wFormatTag %u"), pwfx->wFormatTag));
-            DbgLog((LOG_TRACE,2,TEXT("nChannels %u"), pwfx->nChannels));
-            DbgLog((LOG_TRACE,2,TEXT("nSamplesPerSec %lu"), pwfx->nSamplesPerSec));
-            DbgLog((LOG_TRACE,2,TEXT("nAvgBytesPerSec %lu"), pwfx->nAvgBytesPerSec));
-            DbgLog((LOG_TRACE,2,TEXT("nBlockAlign %u"), pwfx->nBlockAlign));
-            DbgLog((LOG_TRACE,2,TEXT("wBitsPerSample %u"), pwfx->wBitsPerSample));
-
-            /* PCM uses a WAVEFORMAT and does not have the extra size field */
-
-            if (pmtIn->cbFormat >= sizeof(WAVEFORMATEX)) {
-                DbgLog((LOG_TRACE,2,TEXT("cbSize %u"), pwfx->cbSize));
-            }
-        } else {
-        }
-
-    } else {
-        DbgLog((LOG_TRACE,2,TEXT("     Format type %hs"),
-            GuidNames[pmtIn->formattype]));
-    }
 }
 
 

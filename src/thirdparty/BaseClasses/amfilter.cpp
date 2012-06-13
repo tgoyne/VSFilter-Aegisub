@@ -1674,20 +1674,6 @@ CBasePin::DisplayPinInfo(IPin *pReceivePin)
 
 /* Displays general information on the pin media type */
 
-#ifdef _DEBUG
-void CBasePin::DisplayTypeInfo(IPin *pPin, const CMediaType *pmt)
-{
-    UNREFERENCED_PARAMETER(pPin);
-    if (DbgCheckModuleLevel(LOG_TRACE, CONNECT_TRACE_LEVEL)) {
-        DbgLog((LOG_TRACE, CONNECT_TRACE_LEVEL, TEXT("Trying media type:")));
-        DbgLog((LOG_TRACE, CONNECT_TRACE_LEVEL, TEXT("    major type:  %hs"),
-               GuidNames[*pmt->Type()]));
-        DbgLog((LOG_TRACE, CONNECT_TRACE_LEVEL, TEXT("    sub type  :  %hs"),
-               GuidNames[*pmt->Subtype()]));
-    }
-}
-#endif
-
 /* Asked to connect to a pin. A pin is always attached to an owning filter
    object so we always delegate our locking to that object. We first of all
    retrieve a media type enumerator for the input pin and see if we accept

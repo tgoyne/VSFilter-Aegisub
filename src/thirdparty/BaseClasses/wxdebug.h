@@ -263,8 +263,6 @@ typedef struct tag_ObjectDesc {
         CHAR *operator [] (const GUID& guid);
     };
 
-    extern CGuidNameList GuidNames;
-
 #endif
 
 #ifndef REMIND
