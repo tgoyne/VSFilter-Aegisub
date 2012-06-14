@@ -821,7 +821,7 @@ bool Rasterizer::Rasterize(int xsub, int ysub, int fBlur, double fGaussianBlur)
 	// Do some gaussian blur magic
 	if (fGaussianBlur > 0) {
 		GaussianKernel filter(fGaussianBlur);
-		if (mOverlayWidth >= filter.width && mOverlayHeight >= filter.width) {
+		if (mOverlayWidth >= filter.width && mOverlayHeight >= filter.width && filter.divisor > 0) {
 			size_t pitch = mOverlayWidth*2;
 
 			byte *tmp = DNew byte[pitch*mOverlayHeight];
