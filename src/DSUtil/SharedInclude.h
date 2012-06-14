@@ -11,18 +11,4 @@
 #pragma warning(disable:4996)
 #endif
 
-#ifdef _DEBUG
-#define _CRTDBG_MAP_ALLOC // include Microsoft memory leak detection procedures
-
-#if 0
-#include <crtdbg.h>
-#define DNew new(_NORMAL_BLOCK, __FILE__, __LINE__)
-#else
-#define DNew new(__FILE__, __LINE__)
-#endif
-
-#else
-
-#define DNew new
-
-#endif
+#define DNew new(std::nothrow)

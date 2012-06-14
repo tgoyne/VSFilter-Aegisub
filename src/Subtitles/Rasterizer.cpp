@@ -448,6 +448,7 @@ bool Rasterizer::ScanConvert()
 	// Initialize scanline list.
 
 	mpScanBuffer = DNew size_t[mHeight];
+	if (!mpScanBuffer) return false;
 	memset(mpScanBuffer, 0, mHeight*sizeof(size_t));
 
 	// Scan convert the outline.  Yuck, Bezier curves....
